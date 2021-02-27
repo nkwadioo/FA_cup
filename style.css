@@ -24,8 +24,8 @@ body {
   display: grid;
   -ms-grid-columns: (170px)[3];
       grid-template-columns: repeat(3, 170px);
-  -ms-grid-rows: 100px (55px)[3];
-      grid-template-rows: 100px repeat(3, 55px);
+  -ms-grid-rows: 130px (55px)[3];
+      grid-template-rows: 130px repeat(3, 55px);
   grid-row-gap: 5px;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
@@ -38,6 +38,7 @@ body {
   grid-column: 2;
   -ms-grid-row: 1;
   grid-row: 1;
+  margin: 0 auto;
 }
 
 .score_board .team, .score_board .time {
@@ -116,5 +117,53 @@ body {
   display: grid;
   -ms-flex-line-pack: center;
       align-content: center;
+}
+
+.sub.card {
+  font-weight: 300;
+  font-size: 1.635em;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #DFE309;
+  letter-spacing: 1.2px;
+}
+
+.sub.player {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 55px 1fr 10px;
+      grid-template-columns: 55px 1fr 10px;
+  background-color: #1704F4;
+}
+
+.sub.player .player__number {
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.sub.player .player__name {
+  background-color: white;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 1rem;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
 }
 /*# sourceMappingURL=style.css.map */
