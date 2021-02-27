@@ -52,6 +52,7 @@ body {
   margin-bottom: -25px;
   -webkit-transition: margin-bottom .2s ease-in;
   transition: margin-bottom .2s ease-in;
+  z-index: 3;
 }
 
 .score_board .time-cup-wrapper .time {
@@ -82,8 +83,70 @@ body {
 }
 
 .score_board:hover .sub {
-  display: -ms-grid !important;
-  display: grid !important;
+  position: relative;
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-transition-delay: .6s;
+          transition-delay: .6s;
+  visibility: visible;
+  opacity: 1;
+}
+
+.score_board:hover .sub::after, .score_board:hover .sub::before {
+  height: 100%;
+  visibility: visible;
+}
+
+.score_board:hover .sub.card::after, .score_board:hover .sub.card::before {
+  -webkit-animation: cardFadeDown 0.5s cubic-bezier(0.99, 0.38, 0, 0.92) forwards;
+          animation: cardFadeDown 0.5s cubic-bezier(0.99, 0.38, 0, 0.92) forwards;
+}
+
+.score_board:hover .sub.player::after, .score_board:hover .sub.player::before {
+  -webkit-animation: cardFadeDown 0.8s cubic-bezier(0.99, 0.38, 0, 0.92) forwards;
+          animation: cardFadeDown 0.8s cubic-bezier(0.99, 0.38, 0, 0.92) forwards;
+}
+
+@-webkit-keyframes cardFadeDown {
+  0% {
+    top: -30%;
+  }
+  10% {
+    top: -20%;
+  }
+  30% {
+    top: 0;
+    width: 170px;
+  }
+  80% {
+    width: 100%;
+  }
+  100% {
+    z-index: -1;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@keyframes cardFadeDown {
+  0% {
+    top: -30%;
+  }
+  10% {
+    top: -20%;
+  }
+  30% {
+    top: 0;
+    width: 170px;
+  }
+  80% {
+    width: 100%;
+  }
+  100% {
+    z-index: -1;
+    top: 0;
+    width: 100%;
+  }
 }
 
 .time {
@@ -140,7 +203,19 @@ body {
 }
 
 .sub {
-  display: none !important;
+  visibility: hidden;
+  opacity: .5;
+}
+
+.sub::after, .sub::before {
+  content: '';
+  width: 170px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: inherit;
+  margin: auto;
+  z-index: -1;
 }
 
 .sub.card {
@@ -156,6 +231,10 @@ body {
           justify-content: space-evenly;
   background-color: #DFE309;
   letter-spacing: 1.2px;
+}
+
+.sub.card::before, .sub.card::after {
+  top: -58px;
 }
 
 .sub.player {
@@ -189,5 +268,9 @@ body {
   font-size: 2rem;
   font-weight: 300;
   letter-spacing: 2px;
+}
+
+.sub.player::before, .sub.player::after {
+  top: -120px;
 }
 /*# sourceMappingURL=style.css.map */

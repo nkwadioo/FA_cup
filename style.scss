@@ -42,6 +42,7 @@ body {
         align-self: flex-end;
         margin-bottom: -25px;
         transition: margin-bottom .2s ease-in;
+        z-index: 3;
 
         .time {
             height: 55px;
@@ -63,6 +64,7 @@ body {
         grid-column: 1 / -1;
         text-align: left;
         overflow: hidden;
+        
     }
     .player {
         grid-row: 4;
@@ -71,10 +73,53 @@ body {
     }
 
     &:hover .sub {
-        display: grid !important;
+        
+        position: relative;
+        transition: .3s;
+        transition-delay: .6s;
+        visibility: visible;
+        // z-index: 4;
+        opacity: 1;
+
+        &::after,
+        &::before {
+            height: 100%;
+            visibility: visible;
+        }
+
+        &.card::after,
+        &.card::before {
+            animation: cardFadeDown .5s cubic-bezier(0.99, 0.38, 0, 0.92) forwards;
+        }
+
+        &.player::after, 
+        &.player::before {
+            animation: cardFadeDown .8s cubic-bezier(0.99, 0.38, 0, 0.92) forwards;
+        }
     }
     
 
+}
+
+@keyframes cardFadeDown {
+    0% {
+        top: -30%;
+    }
+    10% {
+        top: -20%;
+    }
+    30% {
+        top: 0;
+        width: 170px;
+    }
+    80% {
+        width: 100%;
+    }
+    100% {
+        z-index: -1;
+        top: 0;
+        width: 100%;
+    }
 }
 
 .time {
@@ -124,7 +169,22 @@ body {
 }
 
 .sub {
-    display: none !important;
+    // display: grid !important;
+        visibility: hidden;
+        opacity: .5;
+        &::after,
+        &::before {
+            content: '';
+            width: 170px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            background-color: inherit;
+            margin: auto;
+            
+            z-index: -1;
+        }
+
     &.card {
         font-weight: 300;
         font-size: 1.635em;
@@ -133,6 +193,12 @@ body {
         justify-content: space-evenly;
         background-color: #DFE309;
         letter-spacing: 1.2px;
+
+        &::before,
+        &::after {
+            top: -58px;
+        }
+
     }
 
     &.player {
@@ -156,6 +222,11 @@ body {
             font-size: 2rem;
             font-weight: 300;
             letter-spacing: 2px;
+        }
+
+        &::before,
+        &::after {
+            top: -120px;
         }
     }
 }
