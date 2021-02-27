@@ -30,33 +30,21 @@ body {
     grid-row-gap: 5px;
     align-items: stretch;
     text-align: center;
-    width: fit-content;
 
-    .team {
+
+    .cup {
+        grid-column: 2;
+        grid-row: 1;
+        margin: 0 auto;
+    }
+
+    .team, .time {
         grid-row: 2;
     }
 
-    .time-cup-wrapper {
+    .time {
         grid-column: 2;
-        grid-row: 1 / 3;
-        align-self: flex-end;
-        margin-bottom: -25px;
-        transition: margin-bottom .2s ease-in;
-
-        .time {
-            height: 55px;
-        }
-        
-        .cup {
-            margin: 0 auto;
-        }
-
     }
-    &:hover .time-cup-wrapper {
-        margin-bottom: 0px !important;
-    }
-
-    
 
     .card {
         grid-row: 3;
@@ -69,12 +57,7 @@ body {
         grid-column: 1 / -1;
         text-align: left;
     }
-
-    &:hover .sub {
-        display: grid !important;
-    }
     
-
 }
 
 .time {
