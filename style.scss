@@ -8,6 +8,7 @@
 
 $clr-home: #1704F4;
 $crl-away: #DFE309;
+$clr-red: #e60c0c;
 
 body {
     font-family: 'Lato', sans-serif;
@@ -23,9 +24,10 @@ body {
 .score_board {
     padding: 2rem 5rem;
     display: grid;
-    grid-template-columns: repeat(3, 150px);
+    grid-template-columns: repeat(3, 170px);
     grid-template-rows: 100px repeat(3, 55px);
-    align-items: flex-end;
+    grid-row-gap: 5px;
+    align-items: stretch;
     text-align: center;
 
 
@@ -55,4 +57,51 @@ body {
     }
     
 }
+
+.time {
+    background-color: $clr-red;
+    font-size: 2em;
+    font-weight: bolder;
+    color: white;
+    letter-spacing: 3px;
+}
+
+.team__color{
+    width: 10px;
+}
+
+.team {
+    display: flex;
+
+    &.away {
+        flex-direction: row-reverse;
+    }
+
+    &.away &__color{
+        background-color: $crl-away;
+    }
+    &.home &__color{
+        background-color: $clr-home;
+    }
+
+
+    &__name {
+        background: white;
+        width: calc(70% - 10px);
+        font-size: 2em;
+        padding: 0 0.75rem;
+        letter-spacing: 1.2px;
+    }
+
+    &__score {
+        width: 30%;
+        background-color: rgba(37, 37, 37, 0.5);
+        color: white;
+        font-weight: bold;
+        font-size: 1.75em;
+        display: grid;
+        align-content: center;
+    }
+}
+
 

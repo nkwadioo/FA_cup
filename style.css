@@ -22,13 +22,14 @@ body {
   padding: 2rem 5rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (150px)[3];
-      grid-template-columns: repeat(3, 150px);
+  -ms-grid-columns: (170px)[3];
+      grid-template-columns: repeat(3, 170px);
   -ms-grid-rows: 100px (55px)[3];
       grid-template-rows: 100px repeat(3, 55px);
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  grid-row-gap: 5px;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   text-align: center;
 }
 
@@ -62,5 +63,58 @@ body {
   grid-row: 4;
   grid-column: 1 / -1;
   text-align: left;
+}
+
+.time {
+  background-color: #e60c0c;
+  font-size: 2em;
+  font-weight: bolder;
+  color: white;
+  letter-spacing: 3px;
+}
+
+.team__color {
+  width: 10px;
+}
+
+.team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.team.away {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.team.away .team__color {
+  background-color: #DFE309;
+}
+
+.team.home .team__color {
+  background-color: #1704F4;
+}
+
+.team__name {
+  background: white;
+  width: calc(70% - 10px);
+  font-size: 2em;
+  padding: 0 0.75rem;
+  letter-spacing: 1.2px;
+}
+
+.team__score {
+  width: 30%;
+  background-color: rgba(37, 37, 37, 0.5);
+  color: white;
+  font-weight: bold;
+  font-size: 1.75em;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 /*# sourceMappingURL=style.css.map */
