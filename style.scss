@@ -46,6 +46,7 @@ body {
         grid-row: 3;
         grid-column: 1 / -1;
         text-align: left;
+        overflow: hidden;
     }
     .player {
         grid-row: 4;
