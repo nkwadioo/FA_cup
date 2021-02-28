@@ -35,5 +35,20 @@
             <div class="team__color"></div>
         </div>
     </div>
+
+    <script>
+        setInterval(() => {
+            let time = new Date().toLocaleTimeString();
+            let timeSections = time.split(' ');
+            if(timeSections[0].indexOf(':') > 0) {
+                time = timeSections[0].split(':')[1] +':'+  timeSections[0].split(':')[2];
+                
+            }else {
+                time = timeSections[1].split(':')[1] +':'+ timeSections[0].split(':')[2];
+            }
+            document.querySelector('.time').innerHTML = time;
+            console.log(time)
+        }, 1000);
+    </script>
 </body>
 </html>
