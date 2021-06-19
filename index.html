@@ -35,6 +35,8 @@
             <div class="team__color"></div>
         </div>
     </div>
+    
+    <button onclick="score();" style="padding: 0.6rem 2rem; background: #1704f4; color: white; font-size: 1rem;">LEI scores</button>
 
     <script>
         setInterval(() => {
@@ -49,6 +51,10 @@
             document.querySelector('.time').innerHTML = time;
             console.log(time)
         }, 1000);
+        
+        function score() {
+         alert('clicked')   
+        }
     </script>
 </body>
 </html>
