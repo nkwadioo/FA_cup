@@ -54,7 +54,7 @@
         
         function score() {
          alert('clicked')  
-         let score = document.querySelector('.home.team .team__score');
+         let score = document.querySelector('.home.team .team__score').innerHTML;
          score += 1;
          document.querySelector('.home.team .team__score').innerHTML = score;
         }
