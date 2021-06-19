@@ -54,8 +54,8 @@
         
         function score() {
          alert('clicked')  
-         let score = document.querySelector('.home.team .team__score').innerHTML;
-         score += 1;
+         let score = parseInt(document.querySelector('.home.team .team__score').innerHTML);
+         score = score + 1;
          document.querySelector('.home.team .team__score').innerHTML = score;
         }
     </script>
