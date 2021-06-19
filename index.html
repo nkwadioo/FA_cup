@@ -53,7 +53,10 @@
         }, 1000);
         
         function score() {
-         alert('clicked')   
+         alert('clicked')  
+         let score = document.querySelector('.home.team .team__score');
+         score += 1;
+         document.querySelector('.home.team .team__score').innerHTML = score;
         }
     </script>
 </body>
